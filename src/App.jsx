@@ -1,13 +1,10 @@
-import Square from './components/Square';
-
-import './App.css';
+import './style.scss';
+import Board from './components/Board';
 
 function App() {
   return (
-    <div className="card">
-      <h1>Title - Game</h1>
-
-      <Square/>
+    <div className='app'>
+      <Board />
     </div>
   );
 }

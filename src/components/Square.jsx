@@ -1,8 +1,9 @@
-const Square = () => {
+// eslint-disable-next-line react/prop-types
+const Square = ({ value }) => {
   return (
-    <div>
-      <h3>Hello - meow</h3>
-    </div>
+    <button type="button" className="square">
+      {value}
+    </button>
   );
 };
 
