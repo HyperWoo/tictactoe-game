@@ -5,16 +5,24 @@ import Square from './Square';
 const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
+  //PLAYER STATUS
+  const [isXNext, setIsXNext] = useState(false);
+
   const handelSquareClick = clickedPosition => {
+    //'null', '❌', '⭕'
+    if (squares[clickedPosition]) {
+      return;
+    }
+
     setSquares(currentSquares => {
       return currentSquares.map((squareValue, position) => {
         if (clickedPosition === position) {
-          return '❌';
-        } else {
-          return squareValue;
+          return isXNext ? '❌' : '⭕';
         }
+        return squareValue;
       });
     });
+    setIsXNext(currentIsXNext => !currentIsXNext);
   };
 
   const renderSquare = position => {
