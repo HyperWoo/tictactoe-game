@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
-const Square = ({ value }) => {
+const Square = ({ value, onClickSquare }) => {
   return (
-    <button type="button" className="square">
+    <button type="button" className="square" onClick={onClickSquare}>
       {value}
     </button>
   );
