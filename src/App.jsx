@@ -20,7 +20,6 @@ function App() {
     if (gamingBoard.squares[clickedPosition] || winner) {
       return;
     }
-
     setHistory(currentHistory => {
       const isTraversing = currentMove + 1 != currentHistory.length;
 
