@@ -1,14 +1,15 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-
 import Square from './Square';
 
-const Board = ({ squares, handelSquareClick }) => {
+const Board = ({ squares, handelSquareClick, winningSquares }) => {
   const renderSquare = position => {
+    // [0, 1 ,2]
+    const isWinningSquare = winningSquares.includes(position);
+
     return (
       <Square
         value={squares[position]}
         onClickSquare={() => handelSquareClick(position)}
+        isWinningSquare={isWinningSquare}
       />
     );
   };

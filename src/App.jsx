@@ -13,7 +13,7 @@ function App() {
 
   const gamingBoard = history[currentMove];
 
-  const winner = calculateWinner(gamingBoard.squares);
+  const { winner, winningSquares } = calculateWinner(gamingBoard.squares);
 
   const handelSquareClick = clickedPosition => {
     //'null', '❌', '⭕'
@@ -23,8 +23,6 @@ function App() {
 
     setHistory(currentHistory => {
       const isTraversing = currentMove + 1 != currentHistory.length;
-
-      console.log(isTraversing);
 
       const lastGamingState = isTraversing
         ? currentHistory[currentMove]
@@ -67,6 +65,7 @@ function App() {
       <Board
         squares={gamingBoard.squares}
         handelSquareClick={handelSquareClick}
+        winningSquares={winningSquares}
       />
 
       <button
